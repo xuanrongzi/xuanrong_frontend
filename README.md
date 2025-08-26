@@ -1,6 +1,6 @@
 # XuanRong Frontend
 
-A Next.js-based frontend application for the XuanRong project, featuring API integration and modern React components.
+A comprehensive Next.js-based frontend application for the XuanRong project, featuring weather monitoring, API integration, and modern React components with responsive design.
 
 ## Project Overview
 
@@ -13,11 +13,27 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Features
 
-- **API Demo Page**: Interactive demo page that connects to backend API endpoints
-- **Responsive Design**: Mobile-first design using Tailwind CSS
+### 🌐 Navigation System
+- **Responsive Navigation Bar**: Fixed navigation with mobile-friendly hamburger menu
+- **Active State Indicators**: Visual feedback for current page location
+- **Brand Integration**: XuanRong branding throughout the application
+
+### 🌦️ Weather Monitoring System
+- **Weather Stations Grid**: Interactive grid displaying multiple weather stations
+- **Real-time Status Indicators**: Online/offline/maintenance status with color coding
+- **Detailed Station Views**: Comprehensive weather data including temperature, humidity, pressure, wind, UV index
+- **Dynamic Routing**: Individual pages for each weather station (`/weather/[station]`)
+
+### 🔌 API Integration
+- **Demo API Page**: Interactive demo page that connects to backend API endpoints
 - **Error Handling**: Comprehensive error handling for API calls
-- **Loading States**: User-friendly loading indicators
+- **Loading States**: User-friendly loading indicators throughout the app
+
+### 🎨 Design & UX
+- **Responsive Design**: Mobile-first design using Tailwind CSS
+- **Consistent Styling**: Unified color scheme and component design
 - **TypeScript**: Full TypeScript support for type safety
+- **Accessibility**: Semantic HTML and ARIA labels
 
 ## Getting Started
 
@@ -35,6 +51,13 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Application Routes
+
+### Main Routes
+- **`/`** - Home page with API demo functionality
+- **`/weather`** - Weather stations grid overview
+- **`/weather/[station]`** - Individual weather station details
+
 ### API Integration
 
 The demo page includes functionality to call the backend API at `http://localhost:8000/api/v1/hello/XuanRong`. Make sure your backend server is running on port 8000 for full functionality.
@@ -44,11 +67,27 @@ The demo page includes functionality to call the backend API at `http://localhos
 ```
 src/
 ├── app/
-│   ├── globals.css      # Global styles
-│   ├── layout.tsx       # Root layout component
-│   └── page.tsx         # Main demo page
+│   ├── layout.tsx           # Root layout with navigation
+│   ├── page.tsx             # Home/demo page
+│   ├── globals.css          # Global styles
+│   └── weather/
+│       ├── page.tsx         # Weather stations grid
+│       └── [station]/
+│           └── page.tsx     # Individual station details
+├── components/
+│   └── Navigation.tsx       # Responsive navigation component
 └── ...
 ```
+
+## Weather Station Features
+
+The weather monitoring system includes:
+
+- **6 Mock Weather Stations** across major Chinese cities
+- **Real-time Data Display**: Temperature, humidity, pressure, wind, visibility, UV index
+- **Status Monitoring**: Online/offline/maintenance indicators
+- **Detailed Information**: Station coordinates, elevation, installation date
+- **Interactive Cards**: Click to view detailed station information
 
 ## Learn More
 
